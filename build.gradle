@@ -35,15 +35,6 @@ repositories {
 }
 
 loom {
-    splitEnvironmentSourceSets()
-
-    mods {
-        "secretclient" {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
-    }
-
 }
 
 dependencies {

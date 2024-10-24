@@ -20,7 +20,7 @@
 		]
 	},
 	"mixins": [
-		"secretclient.mixins.json",
+		"secretclient.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.7",
