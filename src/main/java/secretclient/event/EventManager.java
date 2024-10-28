@@ -27,13 +27,12 @@ public class EventManager {
         if (listeners == null)
             return;
         for (EventListener o : listeners) {
-            Class<?> listener = o.source.getClass();
-            for (Method m : listener.getMethods()) {
+            for (Method m : o.source.getClass().getMethods()) {
                 if (m.isAnnotationPresent(EventHandler.class)) {
                     try {
-                        m.invoke(listener.getDeclaredConstructor().newInstance(o.args), obj);
+                        m.invoke(o.source, obj);
                     } catch (Exception err) {
-                        SecretClient.LOGGER.error("Error on event post: " + err.getCause());
+                        SecretClient.LOGGER.error("Error on event post: " + err + "\nCaused By: " + err.getCause());
                     }
                 }
             }

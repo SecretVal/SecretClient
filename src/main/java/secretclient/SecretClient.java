@@ -37,11 +37,11 @@ public class SecretClient implements ClientModInitializer {
         new ModuleKeybinds().register();
 
         eventManager.register(hud);
+        eventManager.register(moduleManager);
+        eventManager.register(keyBindManager);
 
         ClientTickEvents.START_CLIENT_TICK.register(client -> {
             eventManager.post(new TickEvent(client));
-            moduleManager.onStartTick(new TickEvent(client));
-            keyBindManager.onTickEvent(new TickEvent(client));
         });
     }
 }
