@@ -1,0 +1,5 @@
+{
+    "keys.secretclient.Flying" = "Toggle Flying",
+    "keys.secretclient.NoFall" = "Toggle NoFall",
+    "keys.secretclient.Night Vision" = "Toggle NightVision"
+}
